@@ -14,10 +14,10 @@ def register_for_audit(model_klass):
     if not DirtyModelMixin in model_klass.__bases__:
         model_klass.__bases__ = (DirtyModelMixin,) + model_klass.__bases__
 
-    post_save.connect(receiver=post_save_receiver,
-            sender=model_klass,dispatch_uid="audit_trail_post_save_receiver_%s" % model_klass)
+    #post_save.connect(receiver=post_save_receiver,
+    #        sender=model_klass,dispatch_uid="audit_trail_post_save_receiver_%s" % model_klass)
 
-    post_delete.connect(receiver=post_delete_receiver,
-            sender=model_klass,dispatch_uid="audit_trail_post_delete_receiver_%s" % model_klass)
+    #post_delete.connect(receiver=post_delete_receiver,
+    #        sender=model_klass,dispatch_uid="audit_trail_post_delete_receiver_%s" % model_klass)
 
     return model_klass
