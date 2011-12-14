@@ -19,10 +19,7 @@ setup(
     description = "Audit trail provides a mechinism for logging user access and edits at the model level",
     author = 'Stephen J. Zabel',
     author_email = 'sjzabel@gmail.com',
-    packages = find_packages(),
-    namespace_packages = ['audit_trail'],
-    include_package_data = True,
-    zip_safe = False,
+    packages = find_packages('.'),
     classifiers = [
         'Development Status :: 3 - Alpha',
         'Framework :: Django',
